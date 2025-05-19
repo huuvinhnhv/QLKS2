@@ -1,0 +1,165 @@
+{
+    "soPhong": "A101",
+    "donGia": 500000,
+    "sucChua": 2,
+    "tienNghi": "Wifi, TV, Máy lạnh",
+    "loaiPhong": "Tiêu chuẩn",
+    "tinhTrang": "Chưa sử dụng",
+    "khuVuc": "A",
+    "tang": 1,
+    "banLanhDao": [
+        {
+            "maNV": "BLD01",
+            "hoTen": "Đặng Văn Bảo"
+        },
+        {
+            "maNV": "BLD02",
+            "hoTen": "Đặng Hoàng Hải"
+        },
+        {
+            "maNV": "BLD03",
+            "hoTen": "Bùi Văn Hùng"
+        }
+    ],
+    "quanLy": [
+        {
+            "maNV": "QL01",
+            "hoTen": "Đăng Văn Hòa"
+        },
+        {
+            "maNV": "QL03",
+            "hoTen": "Đặng Văn Nam"
+        }
+    ],
+    "nhanVien": [
+        {
+            "maNV": "NV01",
+            "hoTen": "Hoàng Thị Hà"
+        },
+        {
+            "maNV": "NV02",
+            "hoTen": "Lê Văn Nam"
+        },
+        {
+            "maNV": "NV03",
+            "hoTen": "Trần Văn Khoa"
+        }
+    ],
+    "phieuThuePhong": [
+        {
+            "soPhieu": "20250408",
+            "soPhong": "A101",
+            "ngayNhanPhong": "2025-04-06",
+            "ngayTraPhong": "2025-04-08",
+            "tongTien": 1000000,
+            "khachHang": [
+                {
+                    "hoTen": "Phạm Minh Nam",
+                    "cmnd": "715478893"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250406",
+            "soPhong": "A101",
+            "ngayNhanPhong": "2025-04-04",
+            "ngayTraPhong": "2025-04-06",
+            "tongTien": 1000000,
+            "khachHang": [
+                {
+                    "hoTen": "Bùi Thị An",
+                    "cmnd": "922320294"
+                },
+                {
+                    "hoTen": "Đỗ Minh Quân",
+                    "cmnd": "559634588"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250416",
+            "soPhong": "A101",
+            "ngayNhanPhong": "2025-04-14",
+            "ngayTraPhong": "2025-04-16",
+            "tongTien": 1000000,
+            "khachHang": [
+                {
+                    "hoTen": "Lê Văn Loan",
+                    "cmnd": "033900538"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250411",
+            "ngayNhanPhong": "2025-04-08",
+            "ngayTraPhong": "2025-04-11",
+            "tongTien": 1500000,
+            "khachHang": [
+                {
+                    "hoTen": "Đỗ Minh Phong",
+                    "cmnd": "963694762"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250421",
+            "soPhong": "A101",
+            "ngayNhanPhong": "2025-04-19",
+            "ngayTraPhong": "2025-04-21",
+            "tongTien": 1000000,
+            "khachHang": [
+                {
+                    "hoTen": "Ngô Hữu Tú",
+                    "cmnd": "760710883"
+                },
+                {
+                    "hoTen": "Nguyễn Văn Nam",
+                    "cmnd": "347025342"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250426",
+            "soPhong": "A101",
+            "ngayNhanPhong": "2025-04-25",
+            "ngayTraPhong": "2025-04-26",
+            "tongTien": 500000,
+            "khachHang": [
+                {
+                    "hoTen": "Bùi Hữu Châu",
+                    "cmnd": "110825606"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250417",
+            "soPhong": "A101",
+            "ngayNhanPhong": "2025-04-16",
+            "ngayTraPhong": "2025-04-17",
+            "tongTien": 500000,
+            "khachHang": [
+                {
+                    "hoTen": "Phạm Đức Nam",
+                    "cmnd": "383715030"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250428",
+            "soPhong": "A101",
+            "ngayNhanPhong": "2025-04-26",
+            "ngayTraPhong": "2025-04-29",
+            "tongTien": 1500000,
+            "khachHang": [
+                {
+                    "hoTen": "Đặng Đức Quân",
+                    "cmnd": "301529730"
+                },
+                {
+                    "hoTen": "Đặng Ngọc Châu",
+                    "cmnd": "613355454"
+                }
+            ]
+        }
+    ]
+}

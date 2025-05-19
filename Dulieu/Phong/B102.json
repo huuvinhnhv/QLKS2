@@ -1,0 +1,106 @@
+{
+    "soPhong": "B102",
+    "donGia": 500000,
+    "sucChua": 2,
+    "tienNghi": "Wifi, TV, Máy lạnh",
+    "loaiPhong": "Tiêu chuẩn",
+    "tinhTrang": "Chưa sử dụng",
+    "khuVuc": "B",
+    "tang": 1,
+    "banLanhDao": [
+        {
+            "maNV": "BLD01",
+            "hoTen": "Đặng Văn Bảo"
+        },
+        {
+            "maNV": "BLD02",
+            "hoTen": "Đặng Hoàng Hải"
+        },
+        {
+            "maNV": "BLD03",
+            "hoTen": "Bùi Văn Hùng"
+        }
+    ],
+    "quanLy": [
+        {
+            "maNV": "QL01",
+            "hoTen": "Đăng Văn Hòa"
+        },
+        {
+            "maNV": "QL02",
+            "hoTen": "Trần Văn Khoa"
+        }
+    ],
+    "nhanVien": [
+        {
+            "maNV": "NV04",
+            "hoTen": "Trần Thị Mai"
+        },
+        {
+            "maNV": "NV05",
+            "hoTen": "Bùi Văn Bảo"
+        },
+        {
+            "maNV": "NV06",
+            "hoTen": "Bùi Thị Linh"
+        }
+    ],
+    "phieuThuePhong": [
+        {
+            "soPhieu": "20250404",
+            "soPhong": "B102",
+            "ngayNhanPhong": "2025-04-03",
+            "ngayTraPhong": "2025-04-04",
+            "tongTien": 500000,
+            "khachHang": [
+                {
+                    "hoTen": "Vũ Văn Phong",
+                    "cmnd": "102938475"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250407",
+            "soPhong": "B102",
+            "ngayNhanPhong": "2025-04-06",
+            "ngayTraPhong": "2025-04-07",
+            "tongTien": 500000,
+            "khachHang": [
+                {
+                    "hoTen": "Ngô Thị Giang",
+                    "cmnd": "475810293"
+                },
+                {
+                    "hoTen": "Đỗ Minh Hiếu",
+                    "cmnd": "837465012"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250411",
+            "soPhong": "B102",
+            "ngayNhanPhong": "2025-04-09",
+            "ngayTraPhong": "2025-04-11",
+            "tongTien": 1000000,
+            "khachHang": [
+                {
+                    "hoTen": "Bùi Văn Chí",
+                    "cmnd": "219384756"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250416",
+            "soPhong": "B102",
+            "ngayNhanPhong": "2025-04-14",
+            "ngayTraPhong": "2025-04-16",
+            "tongTien": 1000000,
+            "khachHang": [
+                {
+                    "hoTen": "Đặng Thị Kim",
+                    "cmnd": "560123874"
+                }
+            ]
+        }
+    ]
+}

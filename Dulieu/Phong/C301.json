@@ -1,0 +1,97 @@
+{
+    "soPhong": "C301",
+    "donGia": 800000,
+    "sucChua": 2,
+    "tienNghi": "Wifi, TV, Máy lạnh, Ăn sáng",
+    "loaiPhong": "VIP",
+    "tinhTrang": "Chưa sử dụng",
+    "khuVuc": "C",
+    "tang": 3,
+    "banLanhDao": [
+        {
+            "maNV": "BLD01",
+            "hoTen": "Đặng Văn Bảo"
+        },
+        {
+            "maNV": "BLD02",
+            "hoTen": "Đặng Hoàng Hải"
+        },
+        {
+            "maNV": "BLD03",
+            "hoTen": "Bùi Văn Hùng"
+        }
+    ],
+    "quanLy": [
+        {
+            "maNV": "QL02",
+            "hoTen": "Trần Văn Khoa"
+        },
+        {
+            "maNV": "QL03",
+            "hoTen": "Đặng Văn Nam"
+        }
+    ],
+    "nhanVien": [
+        {
+            "maNV": "NV07",
+            "hoTen": "Lê Văn Minh"
+        },
+        {
+            "maNV": "NV08",
+            "hoTen": "Phạm Thị Trang"
+        },
+        {
+            "maNV": "NV09",
+            "hoTen": "Phạm Văn Anh"
+        }
+    ],
+    "phieuThuePhong": [
+        {
+            "soPhieu": "20250404",
+            "soPhong": "C301",
+            "ngayNhanPhong": "2025-04-02",
+            "ngayTraPhong": "2025-04-04",
+            "tongTien": 1600000,
+            "khachHang": [
+                {
+                    "hoTen": "Nguyễn Văn Minh Hoàng",
+                    "cmnd": "136928470"
+                },
+                {
+                    "hoTen": "Trần Thị Thanh Mai",
+                    "cmnd": "409871235"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250408",
+            "soPhong": "C301",
+            "ngayNhanPhong": "2025-04-06",
+            "ngayTraPhong": "2025-04-08",
+            "tongTien": 1600000,
+            "khachHang": [
+                {
+                    "hoTen": "Phạm Minh Anh Tuấn",
+                    "cmnd": "720384915"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250411",
+            "soPhong": "C301",
+            "ngayNhanPhong": "2025-04-09",
+            "ngayTraPhong": "2025-04-11",
+            "tongTien": 1600000,
+            "khachHang": [
+                {
+                    "hoTen": "Hoàng Văn Đức Trung",
+                    "cmnd": "165940382"
+                },
+                {
+                    "hoTen": "Lê Thị Lan Chi",
+                    "cmnd": "872015934"
+                }
+            ]
+        }
+    ]
+}

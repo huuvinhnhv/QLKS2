@@ -1,0 +1,93 @@
+{
+    "soPhong": "A102",
+    "donGia": 500000,
+    "sucChua": 2,
+    "tienNghi": "Wifi, TV, Máy lạnh",
+    "loaiPhong": "Tiêu chuẩn",
+    "tinhTrang": "Chưa sử dụng",
+    "khuVuc": "A",
+    "tang": 1,
+    "banLanhDao": [
+        {
+            "maNV": "BLD01",
+            "hoTen": "Đặng Văn Bảo"
+        },
+        {
+            "maNV": "BLD02",
+            "hoTen": "Đặng Hoàng Hải"
+        },
+        {
+            "maNV": "BLD03",
+            "hoTen": "Bùi Văn Hùng"
+        }
+    ],
+    "quanLy": [
+        {
+            "maNV": "QL01",
+            "hoTen": "Đăng Văn Hòa"
+        },
+        {
+            "maNV": "QL03",
+            "hoTen": "Đặng Văn Nam"
+        }
+    ],
+    "nhanVien": [
+        {
+            "maNV": "NV01",
+            "hoTen": "Hoàng Thị Hà"
+        },
+        {
+            "maNV": "NV02",
+            "hoTen": "Lê Văn Nam"
+        },
+        {
+            "maNV": "NV03",
+            "hoTen": "Trần Văn Khoa"
+        }
+    ],
+    "phieuThuePhong": [
+        {
+            "soPhieu": "20250403",
+            "soPhong": "A102",
+            "ngayNhanPhong": "2025-04-01",
+            "ngayTraPhong": "2025-04-03",
+            "tongTien": 1000000,
+            "khachHang": [
+                {
+                    "hoTen": "Nguyễn Thu Thảo",
+                    "cmnd": "472859103"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250407",
+            "soPhong": "A102",
+            "ngayNhanPhong": "2025-04-05",
+            "ngayTraPhong": "2025-04-07",
+            "tongTien": 1000000,
+            "khachHang": [
+                {
+                    "hoTen": "Trần Văn Hải",
+                    "cmnd": "159370284"
+                },
+                {
+                    "hoTen": "Lê Thị Mai",
+                    "cmnd": "826104739"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250411",
+            "soPhong": "A102",
+            "ngayNhanPhong": "2025-04-10",
+            "ngayTraPhong": "2025-04-11",
+            "tongTien": 500000,
+            "khachHang": [
+                {
+                    "hoTen": "Phạm Đức Anh",
+                    "cmnd": "038471926"
+                }
+            ]
+        }
+    ]
+}

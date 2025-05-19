@@ -1,0 +1,110 @@
+{
+    "soPhong": "C201",
+    "donGia": 800000,
+    "sucChua": 2,
+    "tienNghi": "Wifi, TV, Máy lạnh, Ăn sáng",
+    "loaiPhong": "VIP",
+    "tinhTrang": "Chưa sử dụng",
+    "khuVuc": "C",
+    "tang": 2,
+    "banLanhDao": [
+        {
+            "maNV": "BLD01",
+            "hoTen": "Đặng Văn Bảo"
+        },
+        {
+            "maNV": "BLD02",
+            "hoTen": "Đặng Hoàng Hải"
+        },
+        {
+            "maNV": "BLD03",
+            "hoTen": "Bùi Văn Hùng"
+        }
+    ],
+    "quanLy": [
+        {
+            "maNV": "QL02",
+            "hoTen": "Trần Văn Khoa"
+        },
+        {
+            "maNV": "QL03",
+            "hoTen": "Đặng Văn Nam"
+        }
+    ],
+    "nhanVien": [
+        {
+            "maNV": "NV07",
+            "hoTen": "Lê Văn Minh"
+        },
+        {
+            "maNV": "NV08",
+            "hoTen": "Phạm Thị Trang"
+        },
+        {
+            "maNV": "NV09",
+            "hoTen": "Phạm Văn Anh"
+        }
+    ],
+    "phieuThuePhong": [
+        {
+            "soPhieu": "20250404",
+            "soPhong": "C201",
+            "ngayNhanPhong": "2025-04-02",
+            "ngayTraPhong": "2025-04-04",
+            "tongTien": 1600000,
+            "khachHang": [
+                {
+                    "hoTen": "Bùi Văn Quang Anh",
+                    "cmnd": "720384915"
+                },
+                {
+                    "hoTen": "Đỗ Thị Hồng Hà",
+                    "cmnd": "165940382"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250408",
+            "soPhong": "C201",
+            "ngayNhanPhong": "2025-04-05",
+            "ngayTraPhong": "2025-04-08",
+            "tongTien": 2400000,
+            "khachHang": [
+                {
+                    "hoTen": "Ngô Văn Bách",
+                    "cmnd": "872015934"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250411",
+            "soPhong": "C201",
+            "ngayNhanPhong": "2025-04-10",
+            "ngayTraPhong": "2025-04-11",
+            "tongTien": 800000,
+            "khachHang": [
+                {
+                    "hoTen": "Vũ Thị Mai Hoa",
+                    "cmnd": "034876129"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250416",
+            "soPhong": "C201",
+            "ngayNhanPhong": "2025-04-15",
+            "ngayTraPhong": "2025-04-16",
+            "tongTien": 800000,
+            "khachHang": [
+                {
+                    "hoTen": "Đặng Văn Phú",
+                    "cmnd": "417850293"
+                },
+                {
+                    "hoTen": "Bùi Thị Yến Nhi",
+                    "cmnd": "962105837"
+                }
+            ]
+        }
+    ]
+}

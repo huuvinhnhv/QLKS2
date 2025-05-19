@@ -1,0 +1,195 @@
+{
+  "tenKhachSan": "Khách sạn ABC",
+  "maKhachSan": "KS001",
+  "diaChi": "123 đường ABC, Quận 1, TP.HCM",
+  "soDienThoai": "0123456789",
+  "email": "ABC.hotel@gmail.com",
+  "loaiPhong": [
+    {
+      "maPhong": "LP01",
+      "tenLoaiPhong": "Tiêu chuẩn",
+      "donGia": 500000,
+      "sucChua": 2,
+      "tienNghi": "Wifi, TV, Máy lạnh"
+    },
+    {
+      "maPhong": "LP02",
+      "tenLoaiPhong": "VIP",
+      "donGia": 800000,
+      "sucChua": 2,
+      "tienNghi": "Wifi, TV, Máy lạnh, Ăn sáng"
+    },
+    {
+      "maPhong": "LP03",
+      "tenLoaiPhong": "VIP",
+      "donGia": 1200000,
+      "sucChua": 4,
+      "tienNghi": "Wifi, TV, Máy lạnh, Ăn sáng"
+    }
+  ],
+  "banLanhDao": [
+    {
+      "maNV": "BLD01",
+      "hoTen": "Đặng Văn Bảo",
+      "tenDangNhap": "BLD01",
+      "matKhau": "BLD01",
+      "vaiTro": "Giám đốc",
+      "khuVuc": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "maNV": "BLD02",
+      "hoTen": "Đặng Hoàng Hải",
+      "tenDangNhap": "BLD02",
+      "matKhau": "BLD02",
+      "vaiTro": "Chủ tịch",
+      "khuVuc": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "maNV": "BLD03",
+      "hoTen": "Bùi Văn Hùng",
+      "tenDangNhap": "BLD03",
+      "matKhau": "BLD03",
+      "vaiTro": "Phó giám đốc",
+      "khuVuc": [
+        "A",
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "quanLy": [
+    {
+      "maNV": "QL01",
+      "hoTen": "Đăng Văn Hòa",
+      "tenDangNhap": "QL01",
+      "matKhau": "QL01",
+      "vaiTro": "Quản lý",
+      "khuVuc": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "maNV": "QL02",
+      "hoTen": "Trần Văn Khoa",
+      "tenDangNhap": "QL02",
+      "matKhau": "QL02",
+      "vaiTro": "Quản lý",
+      "khuVuc": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "maNV": "QL03",
+      "hoTen": "Đặng Văn Nam",
+      "tenDangNhap": "QL03",
+      "matKhau": "QL03",
+      "vaiTro": "Quản lý",
+      "khuVuc": [
+        "A",
+        "C"
+      ]
+    }
+  ],
+  "nhanVien": [
+    {
+      "maNV": "NV01",
+      "hoTen": "Hoàng Thị Hà",
+      "tenDangNhap": "NV01",
+      "matKhau": "NV01",
+      "vaiTro": "Tiếp tân",
+      "khuVuc": [
+        "A"
+      ]
+    },
+    {
+      "maNV": "NV02",
+      "hoTen": "Lê Văn Nam",
+      "tenDangNhap": "NV02",
+      "matKhau": "NV02",
+      "vaiTro": "Tiếp tân",
+      "khuVuc": [
+        "A"
+      ]
+    },
+    {
+      "maNV": "NV03",
+      "hoTen": "Trần Văn Khoa",
+      "tenDangNhap": "NV03",
+      "matKhau": "NV03",
+      "vaiTro": "Tiếp tân",
+      "khuVuc": [
+        "A"
+      ]
+    },
+    {
+      "maNV": "NV04",
+      "hoTen": "Trần Thị Mai",
+      "tenDangNhap": "NV04",
+      "matKhau": "NV04",
+      "vaiTro": "Tiếp tân",
+      "khuVuc": [
+        "B"
+      ]
+    },
+    {
+      "maNV": "NV05",
+      "hoTen": "Bùi Văn Bảo",
+      "tenDangNhap": "NV05",
+      "matKhau": "NV05",
+      "vaiTro": "Tiếp tân",
+      "khuVuc": [
+        "B"
+      ]
+    },
+    {
+      "maNV": "NV06",
+      "hoTen": "Bùi Thị Linh",
+      "tenDangNhap": "NV06",
+      "matKhau": "NV06",
+      "vaiTro": "Tiếp tân",
+      "khuVuc": [
+        "B"
+      ]
+    },
+    {
+      "maNV": "NV07",
+      "hoTen": "Lê Văn Minh",
+      "tenDangNhap": "NV07",
+      "matKhau": "NV07",
+      "vaiTro": "Tiếp tân",
+      "khuVuc": [
+        "C"
+      ]
+    },
+    {
+      "maNV": "NV08",
+      "hoTen": "Phạm Thị Trang",
+      "tenDangNhap": "NV08",
+      "matKhau": "NV08",
+      "vaiTro": "Tiếp tân",
+      "khuVuc": [
+        "C"
+      ]
+    },
+    {
+      "maNV": "NV09",
+      "hoTen": "Phạm Văn Anh",
+      "tenDangNhap": "NV09",
+      "matKhau": "NV09",
+      "vaiTro": "Tiếp tân",
+      "khuVuc": [
+        "C"
+      ]
+    }
+  ]
+}

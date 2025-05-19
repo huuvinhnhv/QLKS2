@@ -1,0 +1,93 @@
+{
+    "soPhong": "B103",
+    "donGia": 500000,
+    "sucChua": 2,
+    "tienNghi": "Wifi, TV, Máy lạnh",
+    "loaiPhong": "Tiêu chuẩn",
+    "tinhTrang": "Chưa sử dụng",
+    "khuVuc": "B",
+    "tang": 1,
+    "banLanhDao": [
+        {
+            "maNV": "BLD01",
+            "hoTen": "Đặng Văn Bảo"
+        },
+        {
+            "maNV": "BLD02",
+            "hoTen": "Đặng Hoàng Hải"
+        },
+        {
+            "maNV": "BLD03",
+            "hoTen": "Bùi Văn Hùng"
+        }
+    ],
+    "quanLy": [
+        {
+            "maNV": "QL01",
+            "hoTen": "Đăng Văn Hòa"
+        },
+        {
+            "maNV": "QL02",
+            "hoTen": "Trần Văn Khoa"
+        }
+    ],
+    "nhanVien": [
+        {
+            "maNV": "NV04",
+            "hoTen": "Trần Thị Mai"
+        },
+        {
+            "maNV": "NV05",
+            "hoTen": "Bùi Văn Bảo"
+        },
+        {
+            "maNV": "NV06",
+            "hoTen": "Bùi Thị Linh"
+        }
+    ],
+    "phieuThuePhong": [
+        {
+            "soPhieu": "20250405",
+            "soPhong": "B103",
+            "ngayNhanPhong": "2025-04-04",
+            "ngayTraPhong": "2025-04-05",
+            "tongTien": 500000,
+            "khachHang": [
+                {
+                    "hoTen": "Nguyễn Văn Linh",
+                    "cmnd": "761503829"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250409",
+            "soPhong": "B103",
+            "ngayNhanPhong": "2025-04-07",
+            "ngayTraPhong": "2025-04-09",
+            "tongTien": 1000000,
+            "khachHang": [
+                {
+                    "hoTen": "Trần Thị Minh",
+                    "cmnd": "294710583"
+                },
+                {
+                    "hoTen": "Phạm Minh Như",
+                    "cmnd": "850192736"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250413",
+            "soPhong": "B103",
+            "ngayNhanPhong": "2025-04-11",
+            "ngayTraPhong": "2025-04-13",
+            "tongTien": 1000000,
+            "khachHang": [
+                {
+                    "hoTen": "Hoàng Văn Hoàng",
+                    "cmnd": "136928470"
+                }
+            ]
+        }
+    ]
+}

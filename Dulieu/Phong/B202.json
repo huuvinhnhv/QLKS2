@@ -1,0 +1,97 @@
+{
+    "soPhong": "B202",
+    "donGia": 800000,
+    "sucChua": 2,
+    "tienNghi": "Wifi, TV, Máy lạnh, Ăn sáng",
+    "loaiPhong": "VIP",
+    "tinhTrang": "Chưa sử dụng",
+    "khuVuc": "B",
+    "tang": 2,
+    "banLanhDao": [
+        {
+            "maNV": "BLD01",
+            "hoTen": "Đặng Văn Bảo"
+        },
+        {
+            "maNV": "BLD02",
+            "hoTen": "Đặng Hoàng Hải"
+        },
+        {
+            "maNV": "BLD03",
+            "hoTen": "Bùi Văn Hùng"
+        }
+    ],
+    "quanLy": [
+        {
+            "maNV": "QL01",
+            "hoTen": "Đăng Văn Hòa"
+        },
+        {
+            "maNV": "QL02",
+            "hoTen": "Trần Văn Khoa"
+        }
+    ],
+    "nhanVien": [
+        {
+            "maNV": "NV04",
+            "hoTen": "Trần Thị Mai"
+        },
+        {
+            "maNV": "NV05",
+            "hoTen": "Bùi Văn Bảo"
+        },
+        {
+            "maNV": "NV06",
+            "hoTen": "Bùi Thị Linh"
+        }
+    ],
+    "phieuThuePhong": [
+        {
+            "soPhieu": "20250406",
+            "soPhong": "B202",
+            "ngayNhanPhong": "2025-04-05",
+            "ngayTraPhong": "2025-04-06",
+            "tongTien": 800000,
+            "khachHang": [
+                {
+                    "hoTen": "Nguyễn Văn Tín",
+                    "cmnd": "761503829"
+                },
+                {
+                    "hoTen": "Trần Thị U",
+                    "cmnd": "294710583"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250409",
+            "soPhong": "B202",
+            "ngayNhanPhong": "2025-04-07",
+            "ngayTraPhong": "2025-04-09",
+            "tongTien": 1600000,
+            "khachHang": [
+                {
+                    "hoTen": "Phạm Minh Vương",
+                    "cmnd": "850192736"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250413",
+            "soPhong": "B202",
+            "ngayNhanPhong": "2025-04-11",
+            "ngayTraPhong": "2025-04-13",
+            "tongTien": 1600000,
+            "khachHang": [
+                {
+                    "hoTen": "Hoàng Văn Quận",
+                    "cmnd": "136928470"
+                },
+                {
+                    "hoTen": "Lê Thị Xuyến",
+                    "cmnd": "409871235"
+                }
+            ]
+        }
+    ]
+}

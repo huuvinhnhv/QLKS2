@@ -1,0 +1,109 @@
+{
+    "soPhong": "B401",
+    "donGia": 1200000,
+    "sucChua": 4,
+    "tienNghi": "Wifi, TV, Máy lạnh, Ăn sáng",
+    "loaiPhong": "VIP",
+    "tinhTrang": "Chưa sử dụng",
+    "khuVuc": "B",
+    "tang": 4,
+    "banLanhDao": [
+        {
+            "maNV": "BLD01",
+            "hoTen": "Đặng Văn Bảo"
+        },
+        {
+            "maNV": "BLD02",
+            "hoTen": "Đặng Hoàng Hải"
+        },
+        {
+            "maNV": "BLD03",
+            "hoTen": "Bùi Văn Hùng"
+        }
+    ],
+    "quanLy": [
+        {
+            "maNV": "QL01",
+            "hoTen": "Đăng Văn Hòa"
+        },
+        {
+            "maNV": "QL02",
+            "hoTen": "Trần Văn Khoa"
+        }
+    ],
+    "nhanVien": [
+        {
+            "maNV": "NV04",
+            "hoTen": "Trần Thị Mai"
+        },
+        {
+            "maNV": "NV05",
+            "hoTen": "Bùi Văn Bảo"
+        },
+        {
+            "maNV": "NV06",
+            "hoTen": "Bùi Thị Linh"
+        }
+    ],
+    "phieuThuePhong": [
+        {
+            "soPhieu": "20250403",
+            "soPhong": "B401",
+            "ngayNhanPhong": "2025-04-01",
+            "ngayTraPhong": "2025-04-03",
+            "tongTien": 2400000,
+            "khachHang": [
+                {
+                    "hoTen": "Nguyễn Thị Thanh Thảo",
+                    "cmnd": "849173025"
+                },
+                {
+                    "hoTen": "Phạm Văn Đức Quyết",
+                    "cmnd": "150263947"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250407",
+            "soPhong": "B401",
+            "ngayNhanPhong": "2025-04-04",
+            "ngayTraPhong": "2025-04-07",
+            "tongTien": 3600000,
+            "khachHang": [
+                {
+                    "hoTen": "Hoàng Minh Khôi",
+                    "cmnd": "307418592"
+                },
+                {
+                    "hoTen": "Lê Thị Kim Ngọc",
+                    "cmnd": "629503174"
+                },
+                {
+                    "hoTen": "Vũ Văn Cường",
+                    "cmnd": "910284753"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250410",
+            "soPhong": "B401",
+            "ngayNhanPhong": "2025-04-09",
+            "ngayTraPhong": "2025-04-10",
+            "tongTien": 1200000,
+            "khachHang": [
+                {
+                    "hoTen": "Đỗ Văn Lâm",
+                    "cmnd": "053192847"
+                },
+                {
+                    "hoTen": "Ngô Thị Trà My",
+                    "cmnd": "409871235"
+                },
+                {
+                    "hoTen": "Bùi Văn Phúc",
+                    "cmnd": "720384915"
+                }
+            ]
+        }
+    ]
+}

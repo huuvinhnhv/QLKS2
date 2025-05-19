@@ -1,0 +1,119 @@
+{
+    "soPhong": "A303",
+    "donGia": 800000,
+    "sucChua": 2,
+    "tienNghi": "Wifi, TV, Máy lạnh, Ăn sáng",
+    "loaiPhong": "VIP",
+    "tinhTrang": "Chưa sử dụng",
+    "khuVuc": "A",
+    "tang": 3,
+    "banLanhDao": [
+        {
+            "maNV": "BLD01",
+            "hoTen": "Đặng Văn Bảo"
+        },
+        {
+            "maNV": "BLD02",
+            "hoTen": "Đặng Hoàng Hải"
+        },
+        {
+            "maNV": "BLD03",
+            "hoTen": "Bùi Văn Hùng"
+        }
+    ],
+    "quanLy": [
+        {
+            "maNV": "QL01",
+            "hoTen": "Đăng Văn Hòa"
+        },
+        {
+            "maNV": "QL03",
+            "hoTen": "Đặng Văn Nam"
+        }
+    ],
+    "nhanVien": [
+        {
+            "maNV": "NV01",
+            "hoTen": "Hoàng Thị Hà"
+        },
+        {
+            "maNV": "NV02",
+            "hoTen": "Lê Văn Nam"
+        },
+        {
+            "maNV": "NV03",
+            "hoTen": "Trần Văn Khoa"
+        }
+    ],
+    "phieuThuePhong": [
+        {
+            "soPhieu": "20250407",
+            "soPhong": "A303",
+            "ngayNhanPhong": "2025-04-05",
+            "ngayTraPhong": "2025-04-07",
+            "tongTien": 1600000,
+            "khachHang": [
+                {
+                    "hoTen": "Ngô Văn Cường",
+                    "cmnd": "518273049"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250411",
+            "soPhong": "A303",
+            "ngayNhanPhong": "2025-04-08",
+            "ngayTraPhong": "2025-04-11",
+            "tongTien": 2400000,
+            "khachHang": [
+                {
+                    "hoTen": "Vũ Thị Thảo",
+                    "cmnd": "946158207"
+                },
+                {
+                    "hoTen": "Phạm Minh Tú",
+                    "cmnd": "273049185"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250414",
+            "soPhong": "A303",
+            "ngayNhanPhong": "2025-04-12",
+            "ngayTraPhong": "2025-04-14",
+            "tongTien": 1600000,
+            "khachHang": [
+                {
+                    "hoTen": "Bùi Văn Sơn",
+                    "cmnd": "051938472"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250416",
+            "soPhong": "A303",
+            "ngayNhanPhong": "2025-04-15",
+            "ngayTraPhong": "2025-04-16",
+            "tongTien": 800000,
+            "khachHang": [
+                {
+                    "hoTen": "Đỗ Thị Hồng",
+                    "cmnd": "684721059"
+                }
+            ]
+        },
+        {
+            "soPhieu": "20250418",
+            "soPhong": "A303",
+            "ngayNhanPhong": "2025-04-17",
+            "ngayTraPhong": "2025-04-18",
+            "tongTien": 800000,
+            "khachHang": [
+                {
+                    "hoTen": "Hoàng Văn Hải",
+                    "cmnd": "193847260"
+                }
+            ]
+        }
+    ]
+}
