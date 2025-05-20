@@ -46,7 +46,7 @@ function TaoMenuKhachHang() {
         <h4 class="mb-0 text-white">Khách sạn ABC</h4>
     </a>
     <!-- Ô tìm kiếm -->
-    <form class="form-inline mx-3 w-25" method="get" action="/timkiem">
+    <form class="form-inline mx-3 w-10" method="get" action="/timkiem">
         <input class="form-control w-100" name="tiennghi" type="search" placeholder="Tìm kiếm tiện nghi: Wifi, Máy lạnh,..." aria-label="Tìm kiếm" value="">
     </form>
 

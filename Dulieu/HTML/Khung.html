@@ -61,6 +61,101 @@
         </div>
     </form>
 
+    <form action="/themphieuthue" method="post"> <!-- Thay đổi đường dẫn xử lý tại đây -->
+        <div class="modal fade" id="phieuThuePhongModal" tabindex="-1" role="dialog"
+            aria-labelledby="phieuThuePhongLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="phieuThuePhongLabel">BM1 - Phiếu thuê phòng</h5>
+                        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Đóng">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="soPhong">Số phòng</label>
+                            <input type="text" name="soPhong" id="soPhong" class="form-control" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="ngayNhan">Ngày nhận phòng</label>
+                                <input type="date" name="ngayNhan" id="ngayNhan" class="form-control" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ngayTra">Ngày trả phòng</label>
+                                <input type="date" name="ngayTra" id="ngayTra" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <label>Danh sách khách hàng</label>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="hoTen[]" class="form-control" placeholder="Họ tên">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="cmnd[]" class="form-control" placeholder="CMND">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="hoTen[]" class="form-control" placeholder="Họ tên">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="cmnd[]" class="form-control" placeholder="CMND">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="hoTen[]" class="form-control" placeholder="Họ tên">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="cmnd[]" class="form-control" placeholder="CMND">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="hoTen[]" class="form-control" placeholder="Họ tên">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="cmnd[]" class="form-control" placeholder="CMND">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="hoTen[]" class="form-control" placeholder="Họ tên">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="cmnd[]" class="form-control" placeholder="CMND">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="hoTen[]" class="form-control" placeholder="Họ tên">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" name="cmnd[]" class="form-control" placeholder="CMND">
+                            </div>
+                        </div>
+
+                        <div class="form-text text-muted mt-3">
+                            <strong>Ghi chú:</strong> Tiền thuê hiện nay chỉ tính theo số ngày thuê (không xét giờ)
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        <button type="submit" class="btn btn-success">Lưu phiếu</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+
 </body>
 
 </html>
