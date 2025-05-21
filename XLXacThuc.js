@@ -1,6 +1,6 @@
 
 const XyLyKhachHang = require("./XLKhachHang")
-const DanhSachQuyen = ["TiepTan", "QuanLi", "BanGiamDoc", "Khach"];
+const DanhSachQuyen = ["TiepTan", "QuanLy", "BanGiamDoc", "Khach"];
 
 function KiemTraQuyen(rolesChoPhep = DanhSachQuyen) {
     return function (req, res, next) {

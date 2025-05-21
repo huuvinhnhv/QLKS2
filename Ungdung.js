@@ -6,9 +6,11 @@ const session = require("express-session")
 // const Xu_ly = require("./XL_3L_Cach_1")
 const XyLyKhachHang = require("./XLKhachHang")
 const XyLyTiepTan = require("./XLTiepTan")
+const XyLyQuanLy = require("./XLQuanLy")
 const XyLyXacThuc = require("./XLXacThuc")
 // Khai báo và khởi động Ứng dụng 
 var Ung_dung = EXPRESS()
+Ung_dung.use(EXPRESS.urlencoded({ extended: true }));
 Ung_dung.use(session({
     secret: 'qwertyuiop1234567890',
     resave: false,
@@ -24,55 +26,6 @@ Ung_dung.use((req, res, next) => {
     }
     next();
 });
-// Middleware kiểm tra xem người dùng đã đăng nhập chưa
-function YeuCauDangNhap(req, res, next) {
-    if (req.session.isAuthenticated) {
-        // Người dùng đã đăng nhập, cho phép request đi tiếp
-        next();
-    } else {
-        // Người dùng chưa đăng nhập, trả về lỗi 401 và thông báo
-        res.status(401).send(`
-        <html>
-            <head>
-                <title>404 - Không tìm thấy trang</title>
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-            </head>
-            <body class="container text-center mt-5">
-                <h1 class="display-4 text-danger">403</h1>
-                <p class="lead"> Bạn cần đăng nhập để truy cập tài nguyên này.</p>
-                <a href="/" class="btn btn-primary">Quay về trang chủ</a>
-            </body>
-        </html>
-            `);
-    }
-}
-
-// Middleware kiểm tra vai trò của người dùng
-// Đây là một factory function, nó trả về middleware thật sự
-function YeuCauQuyen(role) {
-    return (req, res, next) => {
-        // Kiểm tra xem người dùng đã đăng nhập và có đúng vai trò yêu cầu không
-        if (req.session.isAuthenticated && req.session.user.role === role) {
-            // Người dùng có quyền, cho phép request đi tiếp
-            next();
-        } else {
-            // Người dùng không có quyền, trả về lỗi 403 và thông báo
-            res.status(403).send(`
-         <html>
-            <head>
-                <title>404 - Không tìm thấy trang</title>
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-            </head>
-            <body class="container text-center mt-5">
-                <h1 class="display-4 text-danger">403</h1>
-                <p class="lead"> Bạn không có quyền truy cập tài nguyên này.</p>
-                <a href="/" class="btn btn-primary">Quay về trang chủ</a>
-            </body>
-        </html>
-               `);
-        }
-    };
-}
 
 Ung_dung.use("/Media", EXPRESS.static("Media"))
 Ung_dung.use(EXPRESS.urlencoded())
@@ -115,6 +68,138 @@ Ung_dung.post('/dangnhap', (req, res) => {
     };
     res.redirect('/');
 });
+
+Ung_dung.get('/phieuthue/xoa/:soPhong-:soPhieu', XyLyXacThuc.KiemTraQuyen(), XLXoaPhieuThue);
+function XLXoaPhieuThue(req, res) {
+    const { soPhong, soPhieu } = req.params;
+    if (req.session.user.role !== "Khach") {
+        XyLyTiepTan.XoaPhieuThue(soPhong, soPhieu, (thanhCong) => {
+            if (!thanhCong) {
+                return res.status(500).send('Lỗi ghi dữ liệu hoặc không tìm thấy phiếu.');
+            }
+            res.redirect('/');
+        });
+    } else {
+        res.redirect('/error');
+    }
+}
+
+Ung_dung.get('/dangxuat', XyLyXacThuc.KiemTraQuyen(), XLDangXuat);
+
+function XLDangXuat(req, res) {
+    req.session.destroy((err) => {
+        if (err) {
+            return res.status(500).send('Lỗi đăng xuất.');
+        }
+        res.redirect('/');
+    });
+}
+// POST: Thêm phiếu thuê phòng
+Ung_dung.post('/themphieuthue', XyLyXacThuc.KiemTraQuyen(), XLThemPhieuThue);
+
+function XLThemPhieuThue(req, res) {
+    if (req.session.user.role !== "Khach") {
+        const { soPhong, ngayNhan, ngayTra, } = req.body;
+        const hoTen = Array.isArray(req.body.hoTen) ? req.body.hoTen : [req.body.hoTen];
+        const cmnd = Array.isArray(req.body.cmnd) ? req.body.cmnd : [req.body.cmnd];
+        if (!soPhong || !ngayNhan || !ngayTra || !hoTen || !cmnd) {
+            return res.status(400).send('Thiếu thông tin.');
+        }
+
+        var phong = XyLyTiepTan.DocDuLieuPhongBangMaPhong(soPhong);
+        if (!phong) {
+            return res.redirect('/error');
+        }
+
+        // Tạo số phiếu dựa trên ngày trả phòng: yyyyMMdd
+        const date = new Date(ngayTra);
+        const soPhieu = date.toISOString().slice(0, 10).replace(/-/g, '');
+
+        // Tạo danh sách khách hàng
+        const khachHang = hoTen.map((ten, index) => {
+            if (ten && cmnd[index]) {
+                return {
+                    hoTen: ten.trim(),
+                    cmnd: cmnd[index].trim()
+                };
+            }
+        }).filter(Boolean);
+
+        // Tính số ngày thuê
+        const soNgay = Math.ceil((new Date(ngayTra) - new Date(ngayNhan)) / (1000 * 60 * 60 * 24));
+        const tongTien = (phong.donGia || 500000) * soNgay;
+
+        const phieuThue = {
+            soPhieu,
+            soPhong,
+            ngayNhanPhong: ngayNhan,
+            ngayTraPhong: ngayTra,
+            tongTien,
+            khachHang
+        };
+
+        // Gắn phiếu thuê vào phòng
+        phong.phieuThuePhong = phong.phieuThuePhong || [];
+        phong.phieuThuePhong.push(phieuThue);
+
+        XyLyTiepTan.LuuPhieuThuePhong(phong, (err) => {
+            if (err) {
+                return res.status(500).send('Lỗi ghi dữ liệu.');
+            }
+            res.redirect(`/phieuthue/${phong.soPhong}-${soPhieu}`);
+        });
+
+    } else {
+        return res.redirect('/error');
+    }
+}
+Ung_dung.get('/thongkethuthang', XyLyXacThuc.KiemTraQuyen(), XLThongKeThuThang);
+function XLThongKeThuThang(req, res) {
+    const thang = req.query.thang; // VD: '2025-06'
+    if (!thang) {
+        return res.status(400).send('Thiếu tham số tháng.');
+    }
+
+    if (req.session.user.role === "QuanLy") {
+
+        let DanhSachPhieuThue = XyLyQuanLy.LocPhieuThueTheoLoaiPhong(req.session.user.username, "");
+        const thongKe = XyLyQuanLy.ThongKeThuThang(DanhSachPhieuThue, thang);
+
+        // Tạo giao diện
+        const Menu = XyLyQuanLy.TaoMenuTiepTan(req.session.user.username);
+        let ChuoiHTML = KhungHTML.replace("ChuoiMenu", Menu);
+        const ChuoiHTMLThongKe = XyLyQuanLy.TaoGiaoDienThongKeThang(thongKe);
+        ChuoiHTML = ChuoiHTML.replace("ChuoiHTML", ChuoiHTMLThongKe);
+
+        res.send(ChuoiHTML);
+    } else {
+        return res.redirect('/error');
+    }
+}
+
+Ung_dung.get('/thongkethunam', XyLyXacThuc.KiemTraQuyen(), XLThongKeThuNam);
+function XLThongKeThuNam(req, res) {
+    const nam = req.query.nam; // VD: '2025'
+    if (!nam) {
+        return res.status(400).send('Thiếu tham số tháng.');
+    }
+
+    if (req.session.user.role === "QuanLy") {
+
+        let DanhSachPhieuThue = XyLyQuanLy.LocPhieuThueTheoLoaiPhong(req.session.user.username, "");
+        const thongKe = XyLyQuanLy.ThongKeThuNam(DanhSachPhieuThue, nam);
+
+        // Tạo giao diện
+        const Menu = XyLyQuanLy.TaoMenuTiepTan(req.session.user.username);
+        let ChuoiHTML = KhungHTML.replace("ChuoiMenu", Menu);
+        const ChuoiHTMLThongKe = XyLyQuanLy.TaoGiaoDienThongKeNam(thongKe);
+        ChuoiHTML = ChuoiHTML.replace("ChuoiHTML", ChuoiHTMLThongKe);
+
+        res.send(ChuoiHTML);
+    } else {
+        return res.redirect('/error');
+    }
+}
 // Middleware xử lý route không tồn tại
 Ung_dung.use((req, res, next) => {
     res.status(404).send(`
@@ -159,12 +244,25 @@ function XLKhoiDong(req, res) {
         ChuoiHTML = ChuoiHTML.replace("ChuoiHTML", ChuoiHTMLPhong);
 
         res.send(ChuoiHTML);
+    } else if (user.role === "QuanLy") {
+        const loaiPhong = XyLyQuanLy.LayLoaiPhong(""); // có thể null nếu không chọn loại phòng
+
+        // Lọc phiếu thuê theo loại phòng (nếu có)
+        const DanhSachPhieuThue = XyLyQuanLy.LocPhieuThueTheoLoaiPhong(user.username, loaiPhong);
+
+        // Tạo giao diện
+        const Menu = XyLyQuanLy.TaoMenuTiepTan(user.username);
+        let ChuoiHTML = KhungHTML.replace("ChuoiMenu", Menu);
+        const ChuoiHTMLPhong = XyLyQuanLy.TaoHtmlTatCaCardPhieuThue(DanhSachPhieuThue);
+        ChuoiHTML = ChuoiHTML.replace("ChuoiHTML", ChuoiHTMLPhong);
+
+        res.send(ChuoiHTML);
     }
 }
 function XLXemPhieuThue(req, res) {
     const { soPhong, soPhieu } = req.params;
     const user = req.session.user || { role: "Khach" };
-    if (user.role !== "Khach") {
+    if (user.role === "TiepTan") {
         const danhSachPhong = XyLyTiepTan.DocDuLieuPhong(user.username);
         let phieuCanXem = null;
 
@@ -191,6 +289,36 @@ function XLXemPhieuThue(req, res) {
         let chuoiHTML = KhungHTML.replace("ChuoiMenu", menu);
 
         const chuoiChiTiet = XyLyTiepTan.TaoHtmlChiTietPhieuThue(phieuCanXem); // viết thêm hàm này
+        chuoiHTML = chuoiHTML.replace("ChuoiHTML", chuoiChiTiet);
+
+        return res.send(chuoiHTML);
+    } else if (user.role === "QuanLy") {
+        const danhSachPhong = XyLyQuanLy.DocDuLieuPhong(user.username);
+        let phieuCanXem = null;
+
+        for (const phong of danhSachPhong) {
+            if (Array.isArray(phong.phieuThuePhong)) {
+                const phieu = phong.phieuThuePhong.find(p => p.soPhieu === soPhieu);
+                if (phieu && phong.soPhong === soPhong) {
+                    // Gắn thông tin phòng vào phiếu
+                    phieu.soPhong = phong.soPhong;
+                    phieu.loaiPhong = phong.loaiPhong;
+                    phieu.tienNghi = phong.tienNghi;
+                    phieuCanXem = phieu;
+                    break;
+                }
+            }
+        }
+
+        if (!phieuCanXem) {
+            return res.status(404).send("Không tìm thấy phiếu thuê");
+        }
+
+        // Tạo HTML chi tiết phiếu thuê
+        const menu = XyLyQuanLy.TaoMenuTiepTan(user.username);
+        let chuoiHTML = KhungHTML.replace("ChuoiMenu", menu);
+
+        const chuoiChiTiet = XyLyQuanLy.TaoHtmlChiTietPhieuThue(phieuCanXem); // viết thêm hàm này
         chuoiHTML = chuoiHTML.replace("ChuoiHTML", chuoiChiTiet);
 
         return res.send(chuoiHTML);
@@ -252,6 +380,39 @@ function XLTimKiem(req, res) {
         const Menu = XyLyTiepTan.TaoMenuTiepTan(user.username);
         let ChuoiHTML = KhungHTML.replace("ChuoiMenu", Menu);
         const ChuoiHTMLPhong = XyLyTiepTan.TaoHtmlTatCaCardPhieuThue(DanhSachPhieuThue);
+        ChuoiHTML = ChuoiHTML.replace("ChuoiHTML", ChuoiHTMLPhong);
+        res.send(ChuoiHTML);
+    } else if (req.session.user.role === "QuanLy") {
+        const loaiPhong = XyLyQuanLy.LayLoaiPhong(loaiPhongTim);
+        let DanhSachPhieuThue = XyLyQuanLy.LocPhieuThueTheoLoaiPhong(user.username, loaiPhong);
+
+        // 🔍 Lọc theo tên khách nếu có
+        if (tenKhachTim) {
+            DanhSachPhieuThue = DanhSachPhieuThue.filter(phieu => {
+                if (!Array.isArray(phieu.khachHang)) return false;
+                return phieu.khachHang.some(khach =>
+                    khach.hoTen && khach.hoTen.toLowerCase().includes(tenKhachTim)
+                );
+            });
+        }
+
+        // 🔍 Lọc theo ngày nhận phòng nếu có
+        if (ngayTaoTim) {
+            DanhSachPhieuThue = DanhSachPhieuThue.filter(phieu => {
+                if (!phieu.ngayTraPhong) return false;
+                const ngayPhieu = new Date(phieu.ngayTraPhong);
+                const ngayTim = new Date(ngayTaoTim);
+                return (
+                    ngayPhieu.getDate() === ngayTim.getDate() &&
+                    ngayPhieu.getMonth() === ngayTim.getMonth() &&
+                    ngayPhieu.getFullYear() === ngayTim.getFullYear()
+                );
+            });
+        }
+
+        const Menu = XyLyQuanLy.TaoMenuTiepTan(user.username);
+        let ChuoiHTML = KhungHTML.replace("ChuoiMenu", Menu);
+        const ChuoiHTMLPhong = XyLyQuanLy.TaoHtmlTatCaCardPhieuThue(DanhSachPhieuThue);
         ChuoiHTML = ChuoiHTML.replace("ChuoiHTML", ChuoiHTMLPhong);
         res.send(ChuoiHTML);
     }

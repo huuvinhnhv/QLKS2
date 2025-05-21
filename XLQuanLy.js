@@ -72,7 +72,7 @@ function XoaPhieuThue(soPhong, soPhieu, callback) {
 
 function DocDuLieuPhong(username) {
     const duLieuKhachSan = DocDuLieuKhachSan();
-    const nhanVien = duLieuKhachSan.nhanVien.find(nv => nv.maNV === username);
+    const nhanVien = duLieuKhachSan.quanLy.find(nv => nv.maNV === username);
     const khuVucQuanLy = nhanVien?.khuVuc || [];
 
     const danhSachPhong = [];
@@ -115,9 +115,7 @@ function LocPhieuThueTheoLoaiPhong(username, loaiPhong) {
 
         if (canInclude && phong.phieuThuePhong && Array.isArray(phong.phieuThuePhong)) {
             for (const phieu of phong.phieuThuePhong) {
-                if (!phieu.soPhong) {
-                    phieu.soPhong = phong.soPhong;
-                }
+                phieu.loaiPhong = phong.loaiPhong;
                 danhSachPhieuThue.push(phieu);
             }
         }
@@ -149,8 +147,6 @@ function TaoMenuTiepTan(username) {
         <img src="/Media/Hotel.jpg" style="width:40px;height:40px; margin-right:10px;" />
         <h4 class="mb-0 text-white">Khách sạn ABC</h4>
     </a>
-
-    <label class="text-white mx-2">Tìm kiếm phiếu thuê:</label>
     <!-- Ô tìm kiếm -->
     <form class="form-inline mx-3 w-10" method="get" action="/timkiem">
         <input class="form-control w-100" name="tenkhachhang" type="search" placeholder="Tìm kiếm tên khách hàng" aria-label="Tìm kiếm">
@@ -163,7 +159,6 @@ function TaoMenuTiepTan(username) {
 
     <!-- Form filter loại phòng -->
     <form class="form-inline mx-1" method="get" action="/timkiem">
-        <label class="text-white mx-2">Loại phòng:</label>
         <select name="loaiphong" class="form-control mr-2" onchange="this.form.submit()">
             <option value="">-- Chọn loại phòng --</option>
             <option value="LP01">Phòng đơn - Tiêu chuẩn</option>
@@ -172,10 +167,24 @@ function TaoMenuTiepTan(username) {
         </select>
     </form>
 
-    <button type="button" class="btn btn-light ml-auto" data-toggle="modal" data-target="#phieuThuePhongModal">
-        Thêm phiếu thuê
-    </button>
-       
+<form action="/thongkethuthang" method="get" class="d-inline-block mr-2">
+    <div class="d-flex align-items-center">
+      <label class="text-white mx-2">Tháng năm:</label>
+        <input type="month" name="thang" required class="form-control mr-2" style="width: 120px;" />
+        <button type="submit" class="btn btn-light">Thống kê tháng</button>
+    </div>
+</form>
+
+<form action="/thongkethunam" method="get" class="d-inline-block">
+    <div class="d-flex align-items-center">
+       <label class="text-white mx-2">Năm:</label>
+        <input type="number" name="nam" required min="2000" max="2100"
+               class="form-control mr-2" style="width: 100px;" placeholder="Năm" />
+        <button type="submit" class="btn btn-light">Thống kê năm</button>
+    </div>
+</form>
+
+
     <!-- Nút đăng nhập bên phải -->
     <div class="ml-auto">
         <a href="/dangxuat" class="text-white" >${username} - Đăng xuất</a>
@@ -207,9 +216,7 @@ function TaoCardHtmlPhieuThue(phieu) {
                 <a class="btn btn-primary btn-sm" href="/phieuthue/${soPhong}-${soPhieu}">
                     <i class="fa fa-eye"></i> Xem chi tiết
                 </a>
-                <a class="btn btn-danger btn-sm" href="/phieuthue/xoa/${soPhong}-${soPhieu}" onclick="return confirm('Bạn có chắc muốn xoá phiếu này không?');">
-                    <i class="fa fa-trash"></i> Xoá
-                </a>
+
             </div>
         </div>
     </div>
@@ -267,8 +274,169 @@ function TaoHtmlChiTietPhieuThue(phieu) {
     `;
 }
 
+function TaoGiaoDienThongKeThang(thongKe) {
+    const { thang, tongThu, chiTiet, danhSachKhuVuc } = thongKe;
+
+    const html = `
+    <div class="card mb-4 border-primary shadow-sm">
+        <div class="card-header bg-primary text-white font-weight-bold text-center">
+           THỐNG KÊ PHIẾU THU THÁNG
+        </div>
+        <div class="card-body">
+            <p><strong>Khu vực quản lý:</strong> ${danhSachKhuVuc.join(', ')}</p>
+            <p><strong>Tháng:</strong> ${thang}</p>
+            <p><strong>Tổng thu:</strong> ${tongThu.toLocaleString()} VND</p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-sm table-hover">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Loại phòng</th>
+                            <th>Thu</th>
+                            <th>Tỷ lệ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${chiTiet.map(item => `
+                            <tr>
+                                <td>${item.loaiPhong}</td>
+                                <td>${item.thu.toLocaleString()} VND</td>
+                                <td>${item.tyLe}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    `;
+
+    return html;
+}
+function TaoGiaoDienThongKeNam(thongKe) {
+    const { nam, tongThu, chiTiet, danhSachKhuVuc } = thongKe;
+
+    const html = `
+    <div class="card mb-4 border-success shadow-sm">
+        <div class="card-header bg-success text-white font-weight-bold text-center">
+           THỐNG KÊ PHIẾU THU NĂM
+        </div>
+        <div class="card-body">
+            <p><strong>Khu vực quản lý:</strong> ${danhSachKhuVuc.join(', ')}</p>
+            <p><strong>Năm:</strong> ${nam}</p>
+            <p><strong>Tổng thu:</strong> ${tongThu.toLocaleString()} VND</p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-sm table-hover">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Loại phòng</th>
+                            <th>Thu</th>
+                            <th>Tỷ lệ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${chiTiet.map(item => `
+                            <tr>
+                                <td>${item.loaiPhong}</td>
+                                <td>${item.thu.toLocaleString()} VND</td>
+                                <td>${item.tyLe}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    `;
+
+    return html;
+}
 
 //xử lý nghiệp vụ
+function ThongKeThuThang(danhSachPhieu, thang) {
+    // Lọc phiếu theo tháng
+    const phieuTrongThang = danhSachPhieu.filter(phieu => {
+        const thangPhieu = new Date(phieu.ngayNhanPhong).getMonth() + 1;
+        const namPhieu = new Date(phieu.ngayNhanPhong).getFullYear();
+        return `${namPhieu}-${String(thangPhieu).padStart(2, '0')}` === thang;
+    });
+
+    // Tổng thu
+    const tongThu = phieuTrongThang.reduce((sum, p) => sum + p.tongTien, 0);
+
+    // Gom nhóm theo loại phòng
+    const thuTheoLoai = {};
+    for (let p of phieuTrongThang) {
+        if (!thuTheoLoai[p.loaiPhong]) {
+            thuTheoLoai[p.loaiPhong] = 0;
+        }
+        thuTheoLoai[p.loaiPhong] += p.tongTien;
+    }
+
+    // Tính tỷ lệ theo loại phòng
+    const chiTiet = Object.entries(thuTheoLoai).map(([loai, thu]) => {
+        const tyLe = tongThu === 0 ? 0 : ((thu / tongThu) * 100).toFixed(2);
+        return { loaiPhong: loai, thu, tyLe: tyLe + '%' };
+    });
+
+    // Lấy danh sách khu vực (ví dụ: A101 => A)
+    const khuVucSet = new Set();
+    for (let p of phieuTrongThang) {
+        if (typeof p.soPhong === 'string' && p.soPhong.length > 0) {
+            khuVucSet.add(p.soPhong[0].toUpperCase());
+        }
+    }
+    const danhSachKhuVuc = Array.from(khuVucSet).sort();
+
+    return {
+        thang,
+        tongThu,
+        chiTiet,
+        danhSachKhuVuc
+    };
+}
+//xử lý nghiệp vụ
+function ThongKeThuNam(danhSachPhieu, nam) {
+    // Lọc phiếu theo năm
+    const phieuTrongNam = danhSachPhieu.filter(phieu => {
+        const namPhieu = new Date(phieu.ngayNhanPhong).getFullYear();
+        return namPhieu === parseInt(nam);
+    });
+
+    // Tổng thu
+    const tongThu = phieuTrongNam.reduce((sum, p) => sum + p.tongTien, 0);
+
+    // Gom nhóm theo loại phòng
+    const thuTheoLoai = {};
+    for (let p of phieuTrongNam) {
+        if (!thuTheoLoai[p.loaiPhong]) {
+            thuTheoLoai[p.loaiPhong] = 0;
+        }
+        thuTheoLoai[p.loaiPhong] += p.tongTien;
+    }
+
+    // Tính tỷ lệ theo loại phòng
+    const chiTiet = Object.entries(thuTheoLoai).map(([loai, thu]) => {
+        const tyLe = tongThu === 0 ? 0 : ((thu / tongThu) * 100).toFixed(2);
+        return { loaiPhong: loai, thu, tyLe: tyLe + '%' };
+    });
+
+    // Lấy danh sách khu vực (chữ cái đầu của số phòng)
+    const khuVucSet = new Set();
+    for (let p of phieuTrongNam) {
+        if (typeof p.soPhong === 'string' && p.soPhong.length > 0) {
+            khuVucSet.add(p.soPhong[0].toUpperCase());
+        }
+    }
+    const danhSachKhuVuc = Array.from(khuVucSet).sort();
+
+    return {
+        nam,
+        tongThu,
+        chiTiet,
+        danhSachKhuVuc
+    };
+}
+
 function LayTatCaCacPhong() {
     const tatCaPhongDayDu = LayTatCaCacPhong();
     const danhSachThongTinCoBan = [];
@@ -309,3 +477,7 @@ module.exports.TaoHtmlChiTietPhieuThue = TaoHtmlChiTietPhieuThue;
 module.exports.DocDuLieuPhongBangMaPhong = DocDuLieuPhongBangMaPhong;
 module.exports.LuuPhieuThuePhong = LuuPhieuThuePhong;
 module.exports.XoaPhieuThue = XoaPhieuThue;
+module.exports.ThongKeThuThang = ThongKeThuThang;
+module.exports.ThongKeThuNam = ThongKeThuNam;
+module.exports.TaoGiaoDienThongKeThang = TaoGiaoDienThongKeThang;
+module.exports.TaoGiaoDienThongKeNam = TaoGiaoDienThongKeNam;

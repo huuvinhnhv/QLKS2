@@ -39,7 +39,7 @@ function DocDuLieuKhachSan() {
 // Xử lý giao diện
 function TaoMenuKhachHang() {
     var ChuoiHTML = `
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary px-3" style="min-height: 8vh;">
+<nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-primary px-3" style="min-height: 8vh;">
     <!-- Logo -->
     <a class="navbar-brand d-flex align-items-center" href="/">
         <img src="/Media/Hotel.jpg" style="width:40px;height:40px; margin-right:10px;" />

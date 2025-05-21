@@ -12,7 +12,7 @@
 <body style="font-family:Arial;width:100%;box-sizing:border-box;
               margin:0px;;padding:0px;overflow-x:hidden">
     ChuoiMenu
-    <div class="container p-4" style="min-height: 72vh;" id="Th_Noi_dung">
+    <div class="container p-4" style="min-height: 72vh; margin-top:8vh;" id="Th_Noi_dung">
 
         ChuoiHTML
     </div>
@@ -77,7 +77,10 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="soPhong">Số phòng</label>
-                            <input type="text" name="soPhong" id="soPhong" class="form-control" required>
+                            <select name="soPhong" id="soPhong" class="form-control" required>
+                                <option value="">-- Chọn phòng --</option>
+                            </select>
+
                         </div>
 
                         <div class="form-row">
@@ -158,7 +161,6 @@
 
 </body>
 
-</html>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
@@ -168,3 +170,32 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
     integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous">
     </script>
+<script>
+    const select = document.getElementById("soPhong");
+    const buildingBlocks = ['A', 'B', 'C'];
+    const floors = [1, 2, 3, 4];
+    const roomsPerFloor = [1, 2, 3]; // số thứ tự trong tầng
+
+    buildingBlocks.forEach(block => {
+        floors.forEach(floor => {
+            let roomNumbers;
+
+            if (floor === 4) {
+                // Tầng 4 chỉ có phòng 401 và 402
+                roomNumbers = [1, 2];
+            } else {
+                roomNumbers = roomsPerFloor;
+            }
+
+            roomNumbers.forEach(num => {
+                const roomCode = block + (floor * 100 + num); // VD: 2 * 100 + 2 = 202
+                const option = document.createElement("option");
+                option.value = roomCode;
+                option.textContent = roomCode;
+                select.appendChild(option);
+            });
+        });
+    });
+</script>
+
+</html>
