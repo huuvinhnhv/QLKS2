@@ -22,17 +22,17 @@
     {
       "maPhong": "LP03",
       "tenLoaiPhong": "VIP-2",
-      "donGia": 1200000,
+      "donGia": 1300000,
       "sucChua": 4,
       "tienNghi": "Wifi, TV, Máy lạnh, Ăn sáng"
     }
   ],
-  "banLanhDao": [
+  "banGiamDoc": [
     {
-      "maNV": "BLD01",
+      "maNV": "BGD01",
       "hoTen": "Đặng Văn Bảo",
-      "tenDangNhap": "BLD01",
-      "matKhau": "BLD01",
+      "tenDangNhap": "BGD01",
+      "matKhau": "BGD01",
       "vaiTro": "Giám đốc",
       "khuVuc": [
         "A",
@@ -41,10 +41,10 @@
       ]
     },
     {
-      "maNV": "BLD02",
+      "maNV": "BGD02",
       "hoTen": "Đặng Hoàng Hải",
-      "tenDangNhap": "BLD02",
-      "matKhau": "BLD02",
+      "tenDangNhap": "BGD02",
+      "matKhau": "BGD02",
       "vaiTro": "Chủ tịch",
       "khuVuc": [
         "A",
@@ -53,10 +53,10 @@
       ]
     },
     {
-      "maNV": "BLD03",
+      "maNV": "BGD03",
       "hoTen": "Bùi Văn Hùng",
-      "tenDangNhap": "BLD03",
-      "matKhau": "BLD03",
+      "tenDangNhap": "BGD03",
+      "matKhau": "BGD03",
       "vaiTro": "Phó giám đốc",
       "khuVuc": [
         "A",

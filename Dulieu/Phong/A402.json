@@ -1,126 +1,126 @@
 {
-    "soPhong": "A402",
-    "donGia": 1200000,
-    "sucChua": 4,
-    "tienNghi": "Wifi, TV, Máy lạnh, Ăn sáng",
-    "loaiPhong": "VIP-2",
-    "tinhTrang": "Chưa sử dụng",
-    "khuVuc": "A",
-    "tang": 4,
-    "banLanhDao": [
+  "soPhong": "A402",
+  "donGia": 1300000,
+  "sucChua": 4,
+  "tienNghi": "Wifi, TV, Máy lạnh, Ăn sáng",
+  "loaiPhong": "VIP-2",
+  "tinhTrang": "Chưa sử dụng",
+  "khuVuc": "A",
+  "tang": 4,
+  "banLanhDao": [
+    {
+      "maNV": "BLD01",
+      "hoTen": "Đặng Văn Bảo"
+    },
+    {
+      "maNV": "BLD02",
+      "hoTen": "Đặng Hoàng Hải"
+    },
+    {
+      "maNV": "BLD03",
+      "hoTen": "Bùi Văn Hùng"
+    }
+  ],
+  "quanLy": [
+    {
+      "maNV": "QL01",
+      "hoTen": "Đăng Văn Hòa"
+    },
+    {
+      "maNV": "QL03",
+      "hoTen": "Đặng Văn Nam"
+    }
+  ],
+  "nhanVien": [
+    {
+      "maNV": "NV01",
+      "hoTen": "Hoàng Thị Hà"
+    },
+    {
+      "maNV": "NV02",
+      "hoTen": "Lê Văn Nam"
+    },
+    {
+      "maNV": "NV03",
+      "hoTen": "Trần Văn Khoa"
+    }
+  ],
+  "phieuThuePhong": [
+    {
+      "soPhieu": "20250404",
+      "soPhong": "A402",
+      "ngayNhanPhong": "2025-04-02",
+      "ngayTraPhong": "2025-04-04",
+      "tongTien": 2400000,
+      "khachHang": [
         {
-            "maNV": "BLD01",
-            "hoTen": "Đặng Văn Bảo"
+          "hoTen": "Bùi Hữu Trung",
+          "cmnd": "951038472"
         },
         {
-            "maNV": "BLD02",
-            "hoTen": "Đặng Hoàng Hải"
+          "hoTen": "Đỗ Thị Thơm",
+          "cmnd": "264719503"
         },
         {
-            "maNV": "BLD03",
-            "hoTen": "Bùi Văn Hùng"
+          "hoTen": "Ngô Văn Khải",
+          "cmnd": "708362145"
+        },
+        {
+          "hoTen": "Vũ Thị Loan",
+          "cmnd": "419258370"
         }
-    ],
-    "quanLy": [
+      ]
+    },
+    {
+      "soPhieu": "20250408",
+      "soPhong": "A402",
+      "ngayNhanPhong": "2025-04-05",
+      "ngayTraPhong": "2025-04-08",
+      "tongTien": 3600000,
+      "khachHang": [
         {
-            "maNV": "QL01",
-            "hoTen": "Đăng Văn Hòa"
+          "hoTen": "Phạm Văn Thắng",
+          "cmnd": "037461825"
         },
         {
-            "maNV": "QL03",
-            "hoTen": "Đặng Văn Nam"
+          "hoTen": "Hoàng Thị Hà",
+          "cmnd": "690153728"
         }
-    ],
-    "nhanVien": [
+      ]
+    },
+    {
+      "soPhieu": "20250411",
+      "soPhong": "A402",
+      "ngayNhanPhong": "2025-04-10",
+      "ngayTraPhong": "2025-04-11",
+      "tongTien": 1200000,
+      "khachHang": [
         {
-            "maNV": "NV01",
-            "hoTen": "Hoàng Thị Hà"
-        },
-        {
-            "maNV": "NV02",
-            "hoTen": "Lê Văn Nam"
-        },
-        {
-            "maNV": "NV03",
-            "hoTen": "Trần Văn Khoa"
+          "hoTen": "Đặng Minh Anh",
+          "cmnd": "821947305"
         }
-    ],
-    "phieuThuePhong": [
+      ]
+    },
+    {
+      "soPhieu": "20250415",
+      "soPhong": "A402",
+      "ngayNhanPhong": "2025-04-12",
+      "ngayTraPhong": "2025-04-15",
+      "tongTien": 3600000,
+      "khachHang": [
         {
-            "soPhieu": "20250404",
-            "soPhong": "A402",
-            "ngayNhanPhong": "2025-04-02",
-            "ngayTraPhong": "2025-04-04",
-            "tongTien": 2400000,
-            "khachHang": [
-                {
-                    "hoTen": "Bùi Hữu Trung",
-                    "cmnd": "951038472"
-                },
-                {
-                    "hoTen": "Đỗ Thị Thơm",
-                    "cmnd": "264719503"
-                },
-                {
-                    "hoTen": "Ngô Văn Khải",
-                    "cmnd": "708362145"
-                },
-                {
-                    "hoTen": "Vũ Thị Loan",
-                    "cmnd": "419258370"
-                }
-            ]
+          "hoTen": "Bùi Thị Châu",
+          "cmnd": "170382946"
         },
         {
-            "soPhieu": "20250408",
-            "soPhong": "A402",
-            "ngayNhanPhong": "2025-04-05",
-            "ngayTraPhong": "2025-04-08",
-            "tongTien": 3600000,
-            "khachHang": [
-                {
-                    "hoTen": "Phạm Văn Thắng",
-                    "cmnd": "037461825"
-                },
-                {
-                    "hoTen": "Hoàng Thị Hà",
-                    "cmnd": "690153728"
-                }
-            ]
+          "hoTen": "Đỗ Văn Khoa",
+          "cmnd": "582104739"
         },
         {
-            "soPhieu": "20250411",
-            "soPhong": "A402",
-            "ngayNhanPhong": "2025-04-10",
-            "ngayTraPhong": "2025-04-11",
-            "tongTien": 1200000,
-            "khachHang": [
-                {
-                    "hoTen": "Đặng Minh Anh",
-                    "cmnd": "821947305"
-                }
-            ]
-        },
-        {
-            "soPhieu": "20250415",
-            "soPhong": "A402",
-            "ngayNhanPhong": "2025-04-12",
-            "ngayTraPhong": "2025-04-15",
-            "tongTien": 3600000,
-            "khachHang": [
-                {
-                    "hoTen": "Bùi Thị Châu",
-                    "cmnd": "170382946"
-                },
-                {
-                    "hoTen": "Đỗ Văn Khoa",
-                    "cmnd": "582104739"
-                },
-                {
-                    "hoTen": "Ngô Minh Đức",
-                    "cmnd": "739461502"
-                }
-            ]
+          "hoTen": "Ngô Minh Đức",
+          "cmnd": "739461502"
         }
-    ]
+      ]
+    }
+  ]
 }

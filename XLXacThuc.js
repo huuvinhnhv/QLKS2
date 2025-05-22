@@ -16,7 +16,7 @@ function KiemTraDangNhap(username, password) {
     const duLieuKhachSan = XyLyKhachHang.DocDuLieuKhachSan();
     // Dùng spread để gộp các mảng
     const danhSachNhanVien = [
-        ...duLieuKhachSan.banLanhDao,
+        ...duLieuKhachSan.banGiamDoc,
         ...duLieuKhachSan.quanLy,
         ...duLieuKhachSan.nhanVien
     ];

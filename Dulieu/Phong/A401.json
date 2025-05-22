@@ -1,101 +1,101 @@
 {
-    "soPhong": "A401",
-    "donGia": 1200000,
-    "sucChua": 4,
-    "tienNghi": "Wifi, TV, Máy lạnh, Ăn sáng",
-    "loaiPhong": "VIP-2",
-    "tinhTrang": "Chưa sử dụng",
-    "khuVuc": "A",
-    "tang": 4,
-    "banLanhDao": [
+  "soPhong": "A401",
+  "donGia": 1300000,
+  "sucChua": 4,
+  "tienNghi": "Wifi, TV, Máy lạnh, Ăn sáng",
+  "loaiPhong": "VIP-2",
+  "tinhTrang": "Chưa sử dụng",
+  "khuVuc": "A",
+  "tang": 4,
+  "banLanhDao": [
+    {
+      "maNV": "BLD01",
+      "hoTen": "Đặng Văn Bảo"
+    },
+    {
+      "maNV": "BLD02",
+      "hoTen": "Đặng Hoàng Hải"
+    },
+    {
+      "maNV": "BLD03",
+      "hoTen": "Bùi Văn Hùng"
+    }
+  ],
+  "quanLy": [
+    {
+      "maNV": "QL01",
+      "hoTen": "Đăng Văn Hòa"
+    },
+    {
+      "maNV": "QL03",
+      "hoTen": "Đặng Văn Nam"
+    }
+  ],
+  "nhanVien": [
+    {
+      "maNV": "NV01",
+      "hoTen": "Hoàng Thị Hà"
+    },
+    {
+      "maNV": "NV02",
+      "hoTen": "Lê Văn Nam"
+    },
+    {
+      "maNV": "NV03",
+      "hoTen": "Trần Văn Khoa"
+    }
+  ],
+  "phieuThuePhong": [
+    {
+      "soPhieu": "20250403",
+      "soPhong": "A401",
+      "ngayNhanPhong": "2025-04-01",
+      "ngayTraPhong": "2025-04-03",
+      "tongTien": 2400000,
+      "khachHang": [
         {
-            "maNV": "BLD01",
-            "hoTen": "Đặng Văn Bảo"
+          "hoTen": "Nguyễn Thị Kim Dung",
+          "cmnd": "849173025"
         },
         {
-            "maNV": "BLD02",
-            "hoTen": "Đặng Hoàng Hải"
-        },
-        {
-            "maNV": "BLD03",
-            "hoTen": "Bùi Văn Hùng"
+          "hoTen": "Trần Văn Quyết",
+          "cmnd": "150263947"
         }
-    ],
-    "quanLy": [
+      ]
+    },
+    {
+      "soPhieu": "20250404",
+      "soPhong": "A401",
+      "ngayNhanPhong": "2025-04-04",
+      "ngayTraPhong": "2025-04-04",
+      "tongTien": 3600000,
+      "khachHang": [
         {
-            "maNV": "QL01",
-            "hoTen": "Đăng Văn Hòa"
+          "hoTen": "Lê Minh Khôi",
+          "cmnd": "304418592"
         },
         {
-            "maNV": "QL03",
-            "hoTen": "Đặng Văn Nam"
+          "hoTen": "Phạm Thị Ngọc",
+          "cmnd": "629503174"
+        },
+        {
+          "hoTen": "Hoàng Văn Cường",
+          "cmnd": "910284753"
         }
-    ],
-    "nhanVien": [
+      ]
+    },
+    {
+      "soPhieu": "20250410",
+      "soPhong": "A401",
+      "ngayNhanPhong": "2025-04-09",
+      "ngayTraPhong": "2025-04-10",
+      "tongTien": 1200000,
+      "khachHang": [
         {
-            "maNV": "NV01",
-            "hoTen": "Hoàng Thị Hà"
-        },
-        {
-            "maNV": "NV02",
-            "hoTen": "Lê Văn Nam"
-        },
-        {
-            "maNV": "NV03",
-            "hoTen": "Trần Văn Khoa"
+          "hoTen": "Đặng Văn Lâm",
+          "cmnd": "053192847"
         }
-    ],
-    "phieuThuePhong": [
-        {
-            "soPhieu": "20250403",
-            "soPhong": "A401",
-            "ngayNhanPhong": "2025-04-01",
-            "ngayTraPhong": "2025-04-03",
-            "tongTien": 2400000,
-            "khachHang": [
-                {
-                    "hoTen": "Nguyễn Thị Kim Dung",
-                    "cmnd": "849173025"
-                },
-                {
-                    "hoTen": "Trần Văn Quyết",
-                    "cmnd": "150263947"
-                }
-            ]
-        },
-        {
-            "soPhieu": "20250404",
-            "soPhong": "A401",
-            "ngayNhanPhong": "2025-04-04",
-            "ngayTraPhong": "2025-04-04",
-            "tongTien": 3600000,
-            "khachHang": [
-                {
-                    "hoTen": "Lê Minh Khôi",
-                    "cmnd": "304418592"
-                },
-                {
-                    "hoTen": "Phạm Thị Ngọc",
-                    "cmnd": "629503174"
-                },
-                {
-                    "hoTen": "Hoàng Văn Cường",
-                    "cmnd": "910284753"
-                }
-            ]
-        },
-        {
-            "soPhieu": "20250410",
-            "soPhong": "A401",
-            "ngayNhanPhong": "2025-04-09",
-            "ngayTraPhong": "2025-04-10",
-            "tongTien": 1200000,
-            "khachHang": [
-                {
-                    "hoTen": "Đặng Văn Lâm",
-                    "cmnd": "053192847"
-                }
-            ]
-        }
-    ]
+      ]
+    }
+  ]
 }
